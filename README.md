@@ -4,9 +4,9 @@
 
   <h1 align="center">DownTheTube | Backend</h1>
 
-  [![Docker Image CI](https://github.com/sam-morin/ArcorOCR-frontend/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/sam-morin/ArcorOCR-frontend/actions/workflows/docker-image.yml)
+  <!-- [![Docker Image CI](https://github.com/sam-morin/ArcorOCR-frontend/actions/workflows/docker-image.yml/badge.svg?branch=main)](https://github.com/sam-morin/ArcorOCR-frontend/actions/workflows/docker-image.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/dwyl/hapi-auth-jwt2/badge.svg?targetFile=package.json&style=flat-square)](https://snyk.io/test/github/dwyl/hapi-auth-jwt2?targetFile=package.json)
-[![Production Status](https://img.shields.io/badge/Production_Status-active-green)](https://arcorocr.com)
+[![Production Status](https://img.shields.io/badge/Production_Status-active-green)](https://arcorocr.com) -->
 
   <p align="center">
     <h3>A simple YouTube download web GUI | <a href="https://github.com/sam-morin/DownTheTube">Frontend Repo</a></h3>
