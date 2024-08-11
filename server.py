@@ -36,16 +36,6 @@ def info_video():
         print(f"Downloading: {youtube_url}")
         yt = YouTube(youtube_url, on_progress_callback=on_progress)
 
-        # print(f"Title: {yt.title}")
-        # print(f"Author: {yt.author}")
-        # print(f"Views: {yt.views}")
-        # print(f"Length: {yt.length} seconds")
-        # print(f"Description: {yt.description}")
-        # print(f"Keywords: {yt.keywords}")
-        # print(f"Age restriction: {yt.age_restricted}")
-        # print(f"Publish date: {yt.publish_date}")
-        # print(f"Thumbnail URL: {yt.thumbnail_url}")
-
         # Dictionary to hold itags for video and audio streams
         resolution_itags = {}
         audio_quality_itags = {}
@@ -81,7 +71,6 @@ def info_video():
                 'url': youtube_url,
                 'channel_url': yt.channel_url,
                 'rating': yt.rating,
-                # 'metadata': yt.metadata
             }
         )
         response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
@@ -121,15 +110,6 @@ def download_video():
         print(f"Downloading: {youtube_url}")
         yt = YouTube(youtube_url, on_progress_callback=on_progress)
 
-        # print(f"Title: {yt.title}")
-        # print(f"Author: {yt.author}")
-        # print(f"Views: {yt.views}")
-        # print(f"Length: {yt.length} seconds")
-        # print(f"Description: {yt.description}")
-        # print(f"Keywords: {yt.keywords}")
-        # print(f"Age restriction: {yt.age_restricted}")
-        # print(f"Publish date: {yt.publish_date}")
-
         # Dictionary to hold itags for video and audio streams
         resolution_itags = {}
         audio_quality_itags = {}
@@ -145,9 +125,8 @@ def download_video():
                 itag = stream.itag
                 audio_quality_itags[quality] = itag
 
-        # Download the best available video and audio
-        # video_itag = resolution_itags.get('1080p')  # You can adjust this resolution as needed
-        audio_itag = max(audio_quality_itags.values())  # Choose the highest quality audio
+        # Download the best available audio
+        audio_itag = max(audio_quality_itags.values())
 
         if not desired_resolution or not audio_itag:
             return jsonify({'error': 'Required streams not found'}), 400
