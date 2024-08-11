@@ -1,2 +1,6 @@
 play-button-4210.svg
 README.md
+# Ignore everything inside the downloaded-videos folder
+downloaded-videos/*
+# But don't ignore the downloaded-videos folder itself
+!downloaded-videos/

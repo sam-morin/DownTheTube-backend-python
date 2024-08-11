@@ -11,12 +11,14 @@ CORS(app, supports_credentials=True)
 # Set the default save directory
 SAVE_DIR = './downloaded-videos'
 
+CORS_ORGIN = '*'
+
 @app.route('/info', methods=['OPTIONS', 'POST'])
 def info_video():
     # Handle preflight (OPTIONS) request
     if request.method == 'OPTIONS':
         response = app.make_response('')
-        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+        response.headers.add('Access-Control-Allow-Origin', f'{CORS_ORGIN}')
         response.headers.add('Access-Control-Allow-Methods', 'POST, OPTIONS')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
         return response
@@ -73,13 +75,13 @@ def info_video():
                 'rating': yt.rating,
             }
         )
-        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+        response.headers.add('Access-Control-Allow-Origin', f'{CORS_ORGIN}')
         return response, 200
 
     except Exception as e:
         print(f"Error: {str(e)}")
         response = jsonify({'error': str(e)})
-        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+        response.headers.add('Access-Control-Allow-Origin', f'{CORS_ORGIN}')
         return response, 500
 
 @app.route('/download', methods=['OPTIONS', 'POST'])
@@ -87,7 +89,7 @@ def download_video():
     # Handle preflight (OPTIONS) request
     if request.method == 'OPTIONS':
         response = app.make_response('')
-        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+        response.headers.add('Access-Control-Allow-Origin', f'{CORS_ORGIN}')
         response.headers.add('Access-Control-Allow-Methods', 'POST, OPTIONS')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
         return response
@@ -167,13 +169,13 @@ def download_video():
             )
         else:
             response = jsonify({'message': 'Video downloaded and merged successfully'})
-            response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+            response.headers.add('Access-Control-Allow-Origin', f'{CORS_ORGIN}')
             return response, 200
 
     except Exception as e:
         print(f"Error: {str(e)}")
         response = jsonify({'error': str(e)})
-        response.headers.add('Access-Control-Allow-Origin', 'http://localhost:5173')
+        response.headers.add('Access-Control-Allow-Origin', f'{CORS_ORGIN}')
         return response, 500
 
 if __name__ == '__main__':
