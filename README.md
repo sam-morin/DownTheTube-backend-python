@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./src/assets/play-button-4210.svg" alt="Logo" width="220">
+  <img src="./play-button-4210.svg" alt="Logo" width="220">
 
   <h1 align="center">DownTheTube | Backend</h1>
 
