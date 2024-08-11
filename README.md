@@ -13,8 +13,6 @@
     <a href="https://github.com/sam-morin/DownTheTube-backend-python/issues">Report Bug</a>
     ·
     <a href="https://github.com/sam-morin/DownTheTube-backend-python/issues">Request Feature</a>
-    <!-- .
-    <a href="#screenshot">Screenshot(s)</a> -->
     .
     <a href="#running">Build/Develop</a>
   </p>
@@ -62,7 +60,7 @@ docker build . -t downthetube-backend
 
 3. Run the image
 ```shell
-docker run -d --restart unless-stopped -p SOME_PUBLIC_PORT:5001 downthetube-backend
+docker run -d --restart unless-stopped -p SOME_PUBLIC_PORT:5001 -v $(pwd)/server/downloaded-videos:/app/downloaded-videos downthetube-backend
 ```
 
 ### Development
