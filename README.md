@@ -20,7 +20,7 @@
 
 <br/>
 
-A basic YouTube viderooo downloader web GUI that runs in a docker container
+The Python backend for a basic YouTube viderooo downloader web GUI that runs in a docker container
 
 ### Background:
 There aren't really any self-hosted YouTube video downloader web applications that I was able to find on Github. I only searched for a few minutes though, so I'm sure there are some out there, maybe.
@@ -40,8 +40,8 @@ There aren't really any self-hosted YouTube video downloader web applications th
     None of the available stream resolutions were progressive except for 360p. Bummer.
     1. Download video stream at the requested resolution
     2. Download the highest quality audio stream
-    3. Stitch these fellas together using ffmpeg
-    4. Leave the video on the server in the ./downloaded-videos folder
+    3. Stitch these friends together using ffmpeg
+    4. Leave the video on the server in the `./downloaded-videos` folder
     5. Pass it back to the browser if requested
 
 # Running
