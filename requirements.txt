@@ -1,3 +1,5 @@
 pytube==15.0.0
-Flask-Cors==4.0.1
+Flask-Cors==5.0.0
 pytubefix==6.9.2
+werkzeug>=3.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
